@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Refresh Simulation</title>
+</head>
+<body>
+<header>
+    <a href="javascript:post(getHomePath(), {}, 'get')">Home</a>
+    <a href="javascript:goBack()">Back</a>
+</header>
+<main>
+    <span id="message"></span>
+    <form action="refresh-while-everything-is-uptodate.html"
+          onsubmit="showMessage('The form is being submitted and hence the page is being reloaded.')">
+        <input type="submit" value="Submit">
+    </form>
+    <form action="../../servlet/http/refresh"
+          onsubmit="showMessage('The response code 204 would receive from the server; it means no need to send any thing because of the content on the server and the content on the client are the same.')">
+        <input type="submit" value="Refresh">
+    </form>
+</main>
+<footer>
+
+</footer>
+</body>
+
+<script type="text/javascript" src="../../scripts/common.js"></script>
+<script>
+    function showMessage(message) {
+        var msg = document.getElementById("message");
+        // msg.textContent = message;
+
+        while (msg.firstChild) {
+            msg.removeChild(msg.firstChild);
+        }
+        msg.appendChild(document.createTextNode(message));
+        return true;
+    }
+</script>
+</html>

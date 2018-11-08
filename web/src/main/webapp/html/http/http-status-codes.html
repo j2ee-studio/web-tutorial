@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Http Status Code</title>
+</head>
+<body>
+<header>
+    <a href="javascript:post(getHomePath(), {}, 'get')">Home</a>
+    <a href="javascript:post(getServletOverviewPath(), {}, 'get')">Back</a>
+</header>
+<main>
+    <h3>Http Status Code</h3>
+
+    <h4>1xx Informational response</h4>
+    <div style="margin-left: 30px;">
+        <p><em>An informational response indicates that the request was received and understood. It is issued on a provisional basis while request processing continues. It alerts the client to wait for a final response. The message consists only of the status line and optional header fields, and is terminated by an empty line. As the HTTP/1.0 standard did not define any 1xx status codes, servers must not send a 1xx response to an HTTP/1.0 compliant client except under experimental conditions.</em></p>
+    </div>
+    <ul>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 100}, 'get')">100</a></b><em style="margin-left: 5px;">continue</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 101}, 'get')">101</a></b><em style="margin-left: 5px;">switching protocols</em></li>
+    </ul>
+
+    <h4>2xx Success</h4>
+    <div style="margin-left: 30px;">
+        <p><em>This class of status codes indicates the action requested by the client was received, understood and accepted.</em></p>
+    </div>
+    <ul>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 200}, 'get')">200</a></b><em style="margin-left: 5px;">ok</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 201}, 'get')">201</a></b><em style="margin-left: 5px;">created</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 202}, 'get')">202</a></b><em style="margin-left: 5px;">accepted</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 203}, 'get')">203</a></b><em style="margin-left: 5px;">non authoritative information</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 204}, 'get')">204</a></b><em style="margin-left: 5px;">no content <a href="refresh-while-everything-is-uptodate.html">refresh while everything is uptodate</a></em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 205}, 'get')">205</a></b><em style="margin-left: 5px;">reset content</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 206}, 'get')">206</a></b><em style="margin-left: 5px;">partial content</em></li>
+    </ul>
+
+    <h4>3xx Redirection</h4>
+    <div style="margin-left: 30px;">
+        <p><em>This class of status code indicates the client must take additional action to complete the request. Many of these status codes are used in URL redirection.</em></p>
+        <p><em>A user agent may carry out the additional action with no user interaction only if the method used in the second request is GET or HEAD. A user agent may automatically redirect a request. A user agent should detect and intervene to prevent cyclical redirects.</em></p>
+    </div>
+    <ul>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 300}, 'get')">300</a></b><em style="margin-left: 5px;">multiple choices</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 301}, 'get')">301</a></b><em style="margin-left: 5px;">moved permanently</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 302}, 'get')">302</a></b><em style="margin-left: 5px;">moved temporarily</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 302}, 'get')">302</a></b><em style="margin-left: 5px;">found</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 303}, 'get')">303</a></b><em style="margin-left: 5px;">see other</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 304}, 'get')">304</a></b><em style="margin-left: 5px;">not modified</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 305}, 'get')">305</a></b><em style="margin-left: 5px;">use proxy</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 307}, 'get')">307</a></b><em style="margin-left: 5px;">temporary redirect</em></li>
+    </ul>
+
+    <h4>4xx Client errors</h4>
+    <div style="margin-left: 30px;">
+        <p><em>This class of status code is intended for situations in which the error seems to have been caused by the client. Except when responding to a HEAD request, the server should include an entity containing an explanation of the error situation, and whether it is a temporary or permanent condition. These status codes are applicable to any request method. User agents should display any included entity to the user.</em></p>
+    </div>
+    <ul>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 400}, 'get')">400</a></b><em style="margin-left: 5px;">bad request</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 401}, 'get')">401</a></b><em style="margin-left: 5px;">unauthorized</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 402}, 'get')">402</a></b><em style="margin-left: 5px;">payment required</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 403}, 'get')">403</a></b><em style="margin-left: 5px;">forbidden</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 404}, 'get')">404</a></b><em style="margin-left: 5px;">not found</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 405}, 'get')">405</a></b><em style="margin-left: 5px;">method not allowed</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 406}, 'get')">406</a></b><em style="margin-left: 5px;">not acceptable</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 407}, 'get')">407</a></b><em style="margin-left: 5px;">proxy authentication required</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 408}, 'get')">408</a></b><em style="margin-left: 5px;">request timeout</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 409}, 'get')">409</a></b><em style="margin-left: 5px;">conflict</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 410}, 'get')">410</a></b><em style="margin-left: 5px;">gone</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 411}, 'get')">411</a></b><em style="margin-left: 5px;">length required</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 412}, 'get')">412</a></b><em style="margin-left: 5px;">precondition failed</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 413}, 'get')">413</a></b><em style="margin-left: 5px;">request entity too large</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 414}, 'get')">414</a></b><em style="margin-left: 5px;">request uri too long</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 415}, 'get')">415</a></b><em style="margin-left: 5px;">unsupported media type</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 416}, 'get')">416</a></b><em style="margin-left: 5px;">requested range not satisfiable</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 417}, 'get')">417</a></b><em style="margin-left: 5px;">expectation failed</em></li>
+    </ul>
+
+    <h4>5xx Server errors</h4>
+    <div style="margin-left: 30px;">
+        <p><em>The server failed to fulfill a request.</em></p>
+        <p><em>Response status codes beginning with the digit "5" indicate cases in which the server is aware that it has encountered an error or is otherwise incapable of performing the request. Except when responding to a HEAD request, the server should include an entity containing an explanation of the error situation, and indicate whether it is a temporary or permanent condition. Likewise, user agents should display any included entity to the user. These response codes are applicable to any request method.</em></p>
+    </div>
+    <ul>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 500}, 'get')">500</a></b><em style="margin-left: 5px;">internal server error</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 501}, 'get')">501</a></b><em style="margin-left: 5px;">not implemented</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 502}, 'get')">502</a></b><em style="margin-left: 5px;">bad gateway</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 503}, 'get')">503</a></b><em style="margin-left: 5px;">service unavailable</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 504}, 'get')">504</a></b><em style="margin-left: 5px;">gateway timeout</em></li>
+        <li><b><a href="javascript:post(getHttpStatusCodePath(), {sc: 505}, 'get')">505</a></b><em style="margin-left: 5px;">http version not supported</em></li>
+    </ul>
+
+</main>
+<footer>
+    <div style="padding: 20px 10px 10px 10px; text-align: center"><p style="color: #1e90ff; font-size: 10px">Copyright © 2015</p></div>
+</footer>
+</body>
+
+<script type="text/javascript" src="../../scripts/common.js"></script>
+
+</html>

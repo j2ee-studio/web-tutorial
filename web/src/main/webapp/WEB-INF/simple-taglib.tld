@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <description>JSTL 1.1 core library</description>
+    <display-name>Custom Taglib</display-name>
+    <tlib-version>1.1</tlib-version>
+    <short-name>sample</short-name>
+    <uri>http://npci.com/taglib</uri>
+
+    <!-- Invoke 'Generate' action to add tags or functions -->
+
+    <tag>
+        <description>
+            Simple example: Insert one line of output
+        </description>
+        <name>simple</name>
+        <tag-class>com.company.team.web.jsp.tag.SimpleTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
+    <tag>
+        <description>
+            Write random 50-digit prime.
+        </description>
+        <name>prime</name>
+        <tag-class>com.company.team.web.jsp.tag.RandomTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>length</name>
+            <required>false</required>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+            Make text as heading text
+        </description>
+        <name>title</name>
+        <tag-class>com.company.team.web.jsp.tag.TitleTag</tag-class>
+        <body-content>JSP</body-content>
+    </tag>
+
+    <tag>
+        <name>ascii</name>
+        <tag-class>com.company.team.web.jsp.tag.AsciiTableBody</tag-class>
+        <body-content>JSP</body-content>
+    </tag>
+    
+</taglib>

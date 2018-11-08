@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://www.mkyong.com/web-development/the-web-xml-deployment-descriptor-examples/ -->
+<!-- J2EE 1.3 DTDs schema. This web.xml file is too old, highly recommend you to upgrade it. -->
+<!-- J2EE 1.4 XML schema, namespace is http://java.sun.com/xml/ns/j2ee -->
+<!-- Java EE 5 XML schema, namespace is http://java.sun.com/xml/ns/javaee -->
+<!-- Java EE 6 XML schema, namespace is http://java.sun.com/xml/ns/javaee -->
+<!-- Java EE 7 XML schema, namespace is http://xmlns.jcp.org/xml/ns/javaee/ -->
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!--
+        Define a small and/or large icon for this web application. The value of
+        these sub-tags should begin from the "web" folder, i.e.
+        "/images/icon/my.ico" references the file
+        "http://my.domain/my/app/images/icon/my.ico". The small image should be
+        16x16 pixels and the large image should be 32x32 pixels.
+     -->
+    <icon>
+        <small-icon>resources/images/visa-small.png</small-icon>
+        <large-icon>resources/images/visa-large.png</large-icon>
+    </icon>
+
+    <display-name>Web Tutorial</display-name>
+
+    <description>
+        This project is going to represent creating a java web application step by step
+        based on basic web project meanings using html java script and jsp and jsf
+    </description>
+
+    <distributable/>
+
+    <session-config>
+        <!-- Specified the timeout value in minute -->
+        <session-timeout>60</session-timeout>
+    </session-config>
+
+    <servlet>
+        <servlet-name>Practice Servlet</servlet-name>
+        <servlet-class>com.company.team.web.jsf.servlet.PracticeServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Content Header Servlet</servlet-name>
+        <servlet-class>com.company.team.web.jsf.servlet.ContentHeaderServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Practice Servlet</servlet-name>
+        <url-pattern>/servlet/practice</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Content Header Servlet</servlet-name>
+        <url-pattern>/servlet/content-header</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <!-- error-page -->
+
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://npci.com/taglib</taglib-uri>
+            <taglib-location>/WEB-INF/simple-taglib.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+
+    <!-- Tag security-constraint should come immediately before login-config -->
+    <security-constraint>
+        <display-name>Administrator Console</display-name>
+        <web-resource-collection>
+            <web-resource-name>Administrator Console</web-resource-name>
+            <url-pattern>/jsp/admin/*</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+
+    <!-- Tag security-constraint should come immediately before login-config -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/jsp/auth/login.jsp</form-login-page>
+            <form-error-page>/jsp/auth/login.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+
+    <filter>
+        <filter-name>auth filter</filter-name>
+        <filter-class>com.company.team.web.filter.AuthFilter</filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>region filter</filter-name>
+        <filter-class>com.company.team.web.filter.RegionFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>region filter</filter-name>
+        <url-pattern>/jsp/filter/download.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>auth filter</filter-name>
+        <url-pattern>/jsp/filter/download.jsp</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>auth filter</filter-name>
+        <url-pattern>/jsp/filter/*</url-pattern>
+    </filter-mapping>
+
+</web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
